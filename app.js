@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { employeesRouter } from './routers/employeesRouter.js';
-import { departmentsRouter } from './routers/departmentsRouter.js';
+import { transactionsRouter } from './routers/transactionsRouter.js';
+
 
 
 function init() {
@@ -16,8 +16,8 @@ function init() {
     res.send('Hello supabase');
   });
 
-  app.use('/employees', employeesRouter);
-  app.use('/departments', departmentsRouter);
+  app.use('/transactions', transactionsRouter);
+ 
 
   app.use(
     bodyParser.urlencoded({
